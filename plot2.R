@@ -28,14 +28,14 @@ if (!file.exists("data")) {
   
   } else {
     message("Data Aready Exists, Reading from subsetted Dataset")
-    data <- read.csv("data/data_were_working_with.txt", header=TRUE, sep=";", na.strings = "?")
+    data <- read.table("data/data_were_working_with.txt", header=TRUE, na.strings = "?")
   }
 
 
-#2
+
 message("Generating Plot")
 svg(file="plot2.png", width=5.34, height=5.34)
 days <- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
-with(data, plot(days, data$Global_active_power, type="l", ylab="Global Active Power (kilowats)", xlab=""))
+with(data, plot(days, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab=""))
 dev.off()
 message("Plot Generated")

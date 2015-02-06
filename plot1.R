@@ -28,14 +28,14 @@ if (!file.exists("data")) {
   
   } else {
     message("Data Aready Exists, Reading from subsetted Dataset")
-    data <- read.csv("data/data_were_working_with.txt", header=TRUE, sep=";", na.strings = "?")
+    data <- read.table("data/data_were_working_with.txt", header=TRUE, na.strings = "?")
   }
 
 
 #1
 message("Generating Plot")
 svg(file="plot1.png", width=5.34, height=5.34)
-hist(data$Global_active_power, freq = TRUE, col="orangered", main="Global Active Power", xlab="Global Active Power (kilowats)")
+hist(data$Global_active_power, freq = TRUE, col="orangered", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.off()
 message("Plot Generated")
 
