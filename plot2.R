@@ -34,7 +34,7 @@ if (!file.exists("data")) {
 
 
 message("Generating Plot")
-svg(file="plot2.png", width=5.34, height=5.34)
+png(file="plot2.png", width=480, height=480)
 days <- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
 with(data, plot(days, data$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab=""))
 dev.off()

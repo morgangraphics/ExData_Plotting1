@@ -33,7 +33,7 @@ if (!file.exists("data")) {
 
 #3
 message("Generating Plot")
-svg(file="plot3.png", width=5.34, height=5.34)
+png(file="plot3.png", width=480, height=480)
 days <- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
 with(data, plot(days, data$Sub_metering_1, type="n", ylab="Energy sub metering", xlab=""))
 lines(days, data$Sub_metering_1, col="black")

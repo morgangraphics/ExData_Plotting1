@@ -34,7 +34,7 @@ if (!file.exists("data")) {
 
 #1
 message("Generating Plot")
-svg(file="plot1.png", width=5.34, height=5.34)
+png(file="plot1.png", width=480, height=480)
 hist(data$Global_active_power, freq = TRUE, col="orangered", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.off()
 message("Plot Generated")

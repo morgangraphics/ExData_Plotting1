@@ -38,7 +38,7 @@ if (!file.exists("data")) {
 # for the granularity to be in place for export while also looking ok in the default viewer
 
 message("Generating Plot")
-svg(file="plot4.png", width=5.34, height=5.34)
+png(file="plot4.png", width=480, height=480)
 par(mfrow = c(2, 2), mgp = c(2.5,1,0), cex.lab=0.8, cex.axis=0.7)
 days <- strptime(paste(data$Date, data$Time), "%Y-%m-%d %H:%M:%S")
 with(days, {
